@@ -1,0 +1,27 @@
+<ons-page class="center" ng-controller="categoriesController">
+
+  	<ons-navigator title="Categories">
+
+		<ons-list>
+
+	  		<ons-search-input
+	        	ng-keyup="search()"
+                ng-model="nameFilter"
+	        	placeholder="Search...">
+	    	</ons-search-input>
+
+            <ons-list-item
+                class="topcoat-list__item__line-height"
+                ng-repeat="category in categories | filter: nameFilter">
+                {{category.name}}
+            </ons-list-item>
+
+        </ons-list>
+
+        <ons-bottom-toolbar>
+    	</ons-bottom-toolbar>
+
+	</ons-navigator>
+
+
+</ons-page>
